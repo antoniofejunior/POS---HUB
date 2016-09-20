@@ -5,7 +5,6 @@
  */
 package ifpb.ads.pos.publicadores.mqtt.sensores;
 
-import ifpb.ads.pos.publicadores.mqtt.elemento.ArCondicionado;
 import ifpb.ads.pos.publicadores.mqtt.elemento.Lampada;
 import java.util.Random;
 import java.util.logging.Level;
@@ -31,6 +30,7 @@ public class ThreadSensorLuminosidade extends Thread {
             MqttClient broker;
             Random gerador = new Random();
             Lampada lp = new Lampada();
+            Thread.sleep(2000);
             while (true) {
                 broker = service.conectarBroker();
                 lp.setLigada(gerador.nextBoolean());
